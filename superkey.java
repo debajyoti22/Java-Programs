@@ -1,24 +1,38 @@
 class animal{
-    void bark(){
-        System.out.println("Animal is barking ");
+    animal(){
+        System.out.println("Animal 1"); 
+    }
+    animal(String name){
+        System.out.println("Welcome : "+name);
+    }
+    void print(){
+        System.out.println("Animal 2");
     }
 }
 class dog extends animal{
-    void bark(){
-        System.out.println("Dog is barking ");
+    void print(){
+        System.out.println("Dog");
     }
-    void eat(){
-        System.out.println("Dog is eating ");
+    void work(){    
+    super.print();
+    print();
+    System.out.println("Printed by Super key");
     }
-    void work(){
-        super.bark(); // super is written to return the parent class of the current object/method
-        eat();
+
+    dog(){
+        super();
+        System.out.println("Printed by super method");        
+    }
+
+    dog(String name){
+        super(name);
+        System.out.println("Parameter passed by super method");    
     }
 }
-
 class superkey{
-    public static void main(String args[]){
-        dog d = new dog();
-        d.work();
+    public static void main(String args[]){    
+    dog d2 = new dog("cat");
+    d2.work();
+    
     }
 }
